@@ -1,13 +1,13 @@
 package pl.orlowski.sebastian.zadania.zadanie1;
 ////Utwórz klasę Human reprezentującą człowieka, musi posiadać atrybuty takie jak wiek, waga, wzrost, imię i płeć. Klasa powinna także zawierać metody getAge, getWeight, getHeight, getName, isMale.
 public class Human {
-    private int age;
-    private int weight;
-    private int height;
+    private Integer age;
+    private Integer weight;
+    private Integer height;
     private String name;
-    private boolean isMale;
+    private Boolean isMale;
 
-    public Human(int age, int weight, int height, String name, boolean isMale) {
+    public Human(Integer age, Integer weight, Integer height, String name, Boolean isMale) {
         this.age = age;
         this.weight = weight;
         this.height = height;
@@ -15,15 +15,15 @@ public class Human {
         this.isMale = isMale;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public int getHeight() {
+    public Integer getHeight() {
         return height;
     }
 
@@ -31,7 +31,7 @@ public class Human {
         return name;
     }
 
-    public boolean isMale() {
+    public Boolean isMale() {
         return isMale;
     }
 }

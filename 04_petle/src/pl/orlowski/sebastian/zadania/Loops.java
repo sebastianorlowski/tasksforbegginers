@@ -1,4 +1,7 @@
 package pl.orlowski.sebastian.zadania;
+
+import java.util.Scanner;
+
 // Pętle i instrukcje warunkowe
 //Utwórz metodę pobierającą dodatnią liczbę całkowitą X, która wyświetli na ekranie liczby od zera do X,
 //Jeśli w zadaniu 1. użyłeś pętli for przerób tę metodę na while (lub odwrotnie),
@@ -92,9 +95,41 @@ public class Loops {
         return result.equals(word);
     }
 
+    //Napisz metodę, która pobierze tablicę liczb całkowitych i posortuje ją w kolejności od najmniejszej do największej liczby. Jednym z podstawowych algorytmów sortowania jest sortowanie bąbelkowe.
+
+    public void sortArray(int [] tab){
+        int temp;
+        for(int i=0;i<tab.length-1;i++) {
+            for(int j=0;j<tab.length-1;j++) {
+                if(tab[j] > tab[j+1]) {
+                    temp = tab[j];
+                    tab[j] = tab[j+1];
+                    tab[j+1] = temp;
+                }
+            }
+        }
+        for(int i : tab) {
+            System.out.print(i + " ");
+         }
+    }
+
+
     public static void main(String[] args) {
         Loops loops = new Loops();
         loops.changeToBinary(141);
         System.out.println(loops.isPalindrom("koło"));
+        Scanner input = new Scanner(System.in);
+        System.out.println("How many numbers do you want to enter?");
+        int count = input.nextInt();
+        int number;
+        int[] tab = new int[count];
+        for(int i=1;i<count+1;i++) {
+            System.out.print("Please enter number " + i + " :");
+            System.out.println();
+            number = input.nextInt();
+            tab[i-1] = number;
+        }
+        System.out.print("Sorted array :");
+        loops.sortArray(tab);
     }
 }
